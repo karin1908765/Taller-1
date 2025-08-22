@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía Visual: Modelado de Bases de Datos - Taller 1</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #f0f2f5;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1a4a6d;
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #4a90e2;
+            padding-bottom: 15px;
+            animation: fadeIn 1s ease-out;
+        }
+        h2 {
+            color: #d9534f;
+            font-size: 1.8em;
+            margin-top: 40px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0ad4e;
+            display: flex;
+            align-items: center;
+        }
+        h2 svg {
+            margin-right: 15px;
+        }
+        h3 {
+            color: #34495e;
+            font-size: 1.4em;
+            margin-top: 25px;
+            border-left: 5px solid #5cb85c;
+            padding-left: 10px;
+        }
+        .section-intro, .conclusion {
+            background-color: #eaf6ff;
+            padding: 20px;
+            border-left: 6px solid #4a90e2;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            font-style: italic;
+        }
+        .info-box {
+            background-color: #f7f9fc;
+            border: 1px solid #e0e6eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: flex-start;
+        }
+        .info-box .icon {
+            font-size: 2.5em;
+            margin-right: 15px;
+            color: #4a90e2;
+            flex-shrink: 0;
+        }
+        .info-box ul {
+            list-style-type: none; /* Quitamos el estilo de la lista para un diseño más limpio */
+            padding: 0;
+            margin: 0;
+        }
+        .info-box li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+        }
+        .info-box li::before {
+            content: '🔹'; /* Un pequeño diamante como viñeta */
+            position: absolute;
+            left: 0;
+            color: #5cb85c;
+            font-size: 0.8em;
+            top: 5px;
+        }
+        .info-box li strong {
+            color: #d9534f;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            border-top: 1px dashed #ccc;
+            padding-top: 20px;
+        }
+        .citation {
+            font-size: 0.8em;
+            color: #666;
+            text-align: center;
+            margin-top: 10px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>INFOGRAFÍA VISUAL: MODELADO DE BASES DE DATOS</h1>
+        <p class="citation">Basado en "TALLER 1 - EJERCICIO DE MODELADO DE BASE DE DATOS" de la Universidad Andina del Cusco [3, 4].</p>
+
+        <div class="section-intro">
+            <h3>✨ Introducción al Modelado Conceptual</h3>
+            <p>
+                Este informe aborda el <strong>modelado conceptual</strong> de dos escenarios empresariales clave, empleando técnicas de diagramación (mencionadas como LucidChart en el original) para una representación clara de <strong>entidades, atributos y relaciones relevantes</strong> [5]. El objetivo es establecer una base de datos <strong>coherente, eficiente</strong> y que soporte los procesos fundamentales de ambas organizaciones [1, 5].
+            </p>
+        </div>
+
+        <h2><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-shop" viewBox="0 0 16 16"><path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35L14.75 4H11V2H5v2H1.25zm0 13a1 1 0 0 1 0-1h10a1 1 0 0 1 0 1H2.97zM14 7v1H9V7zm-2 0v1H6V7zM4 7v1H1V7zm8 4v1H9v-1zm-2 0v1H6v-1zm-4 0v1H1v-1zM0 6a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V6z"/></svg> 1. Sistema de Registro de Electrodomésticos "ABC"</h2>
+        <p>Modelo enfocado en la gestión de inventario, proveedores, clientes y operaciones de compra/venta de electrodomésticos para la tienda "ABC" [5, 6].</p>
+
+        <div class="info-box">
+            <div class="icon">🛒</div>
+            <div>
+                <h3>Entidad: Electrodomésticos</h3>
+                <ul>
+                    <li>Atributos: <strong>nombre</strong>, descripción, marca, <strong>precio de compra</strong>, <strong>precio de venta</strong> [6].</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="icon">🚚</div>
+            <div>
+                <h3>Entidad: Proveedores</h3>
+                <ul>
+                    <li>Atributos: Información relevante del proveedor [7].</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="icon">📝</div>
+            <div>
+                <h3>Entidad: Orden de Compra</h3>
+                <ul>
+                    <li>Atributos: <strong>fecha y hora específicos</strong>, monto total pagado por entradas [7].</li>
+                    <li>Relación: Se vincula con los <strong>Detalles de Entrada</strong> [7].</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="icon">📦</div>
+            <div>
+                <h3>Entidad: Detalle de Entrada/Salida</h3>
+                <ul>
+                    <li>Atributos: <strong>cantidad exacta del producto</strong> (¡con signo!), <strong>subtotal</strong> (cantidad * precio de compra) [7, 8].</li>
+                    <li>Regla clave: Signo '+' para entrada, '-' para salida (venta a clientes) [8, 9].</li>
+                    <li>Relación: Puede ser de entrada (vía Orden de Compra) o salida (venta a Clientes) [7, 8].</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="icon">🧑‍🤝‍🧑</div>
+            <div>
+                <h3>Entidades: Clientes y Comprobante</h3>
+                <ul>
+                    <li><strong>Clientes</strong>: Involucrados en las salidas (ventas) [8].</li>
+                    <li><strong>Comprobante</strong>: Recibido por el cliente; relacionado con el <strong>Detalle de Entrada/Salida</strong> [8].</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.672.13-1.32.417-1.923.815a5.98 5.98 0 0 0-.89.917c-.506.606-.948 1.256-1.314 1.954-.482.91-.837 1.83-1.049 2.766H2c.113-.917.386-1.81.798-2.656.416-.855.945-1.637 1.588-2.316.536-.58 1.144-1.054 1.808-1.408C6.11 2.372 6.808 2.052 7.5 2.077zM4 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm5.5-1.923c.672-.13 1.32-.417 1.923-.815a5.98 5.98 0 0 0 .89-.917c.506-.606.948-1.256 1.314-1.954.482-.91.837-1.83 1.049-2.766H14c-.113.917-.386 1.81-.798 2.656-.416.855-.945 1.637-1.588 2.316-.536.58-1.144 1.054-1.808 1.408-.698.356-1.396.676-2.094.701zM10 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-5.5 8.923c-.672-.13-1.32-.417-1.923-.815a5.98 5.98 0 0 0-.89-.917c-.506-.606-.948-1.256-1.314-1.954-.482-.91-.837-1.83-1.049-2.766H2c.113.917.386 1.81.798 2.656.416.855.945 1.637 1.588 2.316.536.58 1.144 1.054 1.808 1.408C6.11 13.628 6.808 13.948 7.5 13.923zM12 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg> 2. Negocio de Comercio Electrónico</h2>
+        <p>Diseñado para una plataforma de venta en línea, gestionando productos, clientes, pedidos y opiniones para una operación eficiente [1, 9, 10].</p>
+
+        <div class="info-box">
+            <div class="icon">📱</div>
+            <div>
+                <h3>Entidad: Productos</h3>
+                <ul>
+                    <li>Atributos: <strong>nombre</strong>, descripción, <strong>precio</strong>, <strong>stock disponible</strong>, marca [10].</li>
+                    <li>Relación: Pertenece a una <strong>única categoría</strong> [10].</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="icon">👤</div>
+            <div>
+                <h3>Entidad: Clientes</h3>
+                <ul>
+                    <li>Atributos: <strong>nombre completo</strong>, <strong>correo electrónico (único)</strong>, contraseña, dirección de envío [10, 11].</li>
+                    <li>Regla: Un cliente puede tener <strong>múltiples direcciones de envío</strong> [11].</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="icon">🛒</div>
+            <div>
+                <h3>Entidad: Pedidos y Detalles de Pedido</h3>
+                <ul>
+                    <li><strong>Pedidos</strong>: Atributos - <strong>fecha</strong>, <strong>estado</strong> (Pendiente, Enviado, Entregado) [11].</li>
+                    <li>Relación: Asociado a un <strong>único cliente</strong> [11].</li>
+                    <li><strong>Detalles de Pedido</strong>: Especifica el <strong>producto comprado</strong> y <strong>cantidad</strong> dentro de un pedido [11].</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="icon">🏷️</div>
+            <div>
+                <h3>Entidades: Categorías y Marcas</h3>
+                <ul>
+                    <li><strong>Categorías</strong>: Atributos - <strong>nombre</strong>, descripción [11].</li>
+                    <li><strong>Marcas</strong>: Atributos - <strong>nombre</strong>, país de origen [11].</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="icon">⭐</div>
+            <div>
+                <h3>Entidad: Opiniones</h3>
+                <ul>
+                    <li>Atributos: <strong>calificación</strong> (1 a 5 estrellas), comentario de texto, fecha [12].</li>
+                    <li>Relación: Asociada a un <strong>único cliente</strong> y a un <strong>único producto</strong> [12].</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="conclusion">
+            <h3>✅ Conclusiones Clave del Modelado Conceptual</h3>
+            <ul>
+                <li>El modelado conceptual facilita la <strong>estructuración ordenada de la información</strong>, garantizando control y trazabilidad en las operaciones de "ABC" [2].</li>
+                <li>Para el e-commerce, el diseño abarca <strong>procesos fundamentales</strong> (productos, clientes, pedidos, etc.) para una gestión eficiente y coherente [13].</li>
+                <li>El uso de diagramas (como en LucidChart) es crucial para la **representación visual de entidades, atributos y relaciones**, lo que mejora la comprensión de las reglas de negocio y sienta las bases para futuras implementaciones [12-14].</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p><strong>Docente:</strong> Ing. Hugo Espetia Huamanga [3]</p>
+            <p><strong>Integrantes:</strong> Cusihuaman Concha Danny Sebastian, Ninancuro Carcamo Diego, Quispe Champi Karin Rubina [3]</p>
+            <p><strong>Cusco – Perú, 2025</strong> [4]</p>
+            <p class="citation">Referencia para diagramación: Lucid Software Inc. (s.f.). Lucidchart: editor de diagramas.Lucid. [15]</p>
+        </div>
+    </div>
+</body>
+</html>
